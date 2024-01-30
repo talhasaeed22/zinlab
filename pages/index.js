@@ -44,6 +44,12 @@ export default function Home() {
           <div className={styles.slider}>
             <Slider />
           </div>
+          <div className={styles.Bookmarks}>
+            <Bookmarks />
+          </div>
+          <div className={styles.Bookmarks}>
+            <Bookmarks />
+          </div>
         </div>
       </main>
     </>

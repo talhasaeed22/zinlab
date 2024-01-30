@@ -1,4 +1,6 @@
 import styles from "./navbar.module.css";
+import { useState } from "react";
+
 import Image from "next/image";
 const Navbar = () => {
   const navitems = [
@@ -14,6 +16,29 @@ const Navbar = () => {
     "Add-ons",
     "More",
   ];
+  const dropdownContent = [
+    ["Stock Footage", "Motion Graphics", "All Stock Video"],
+    [],
+    ["Royality Free Music", "logos & Idents", "All Music"],
+    [],
+    [],
+    ["Dropdown Item 1", "Dropdown Item 2"],
+    [],
+    ["Dropdown Item 1", "Dropdown Item 2"],
+    ["Dropdown Item 1", "Dropdown Item 2"],
+    [],
+    [],
+  ];
+
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const handleNavitemHover = (navitem) => {
+    setActiveDropdown(navitem);
+  };
+
+  const handleNavitemLeave = () => {
+    setActiveDropdown(null);
+  };
   return (
     <div className={styles.navbar_container}>
       <div className={styles.navbar_uppper}>
@@ -42,7 +67,23 @@ const Navbar = () => {
 
       <div className={styles.navbar_lower}>
         {navitems.map((nav, index) => {
-          return <span key={index}>{nav}</span>;
+          return (
+            <div
+              key={index}
+              className={styles.navItemWrapper}
+              onMouseEnter={() => handleNavitemHover(nav)}
+              onMouseLeave={handleNavitemLeave}
+            >
+              <span>{nav}</span>
+              {activeDropdown === nav && dropdownContent[index].length > 0 && (
+                <div className={styles.dropdown}>
+                  {dropdownContent[index].map((item, idx) => (
+                    <span key={idx}>{item}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
         })}
       </div>
     </div>

@@ -18,8 +18,13 @@ const Slider = () => {
   return (
     <>
       <div className={styles.container}>
-        <h3 className={commonStyles.primaryHeading}>Convert from PDF</h3>
-
+        <div className={styles.headingContainer}>
+          <h3 className={commonStyles.primaryHeading}>Convert from PDF</h3>
+          <div className={styles.right}>
+            <span>ALL</span>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
         <div className={styles.sliderBody}>
           <i
             className={`fa fa-arrow-circle-o-left ${styles.leftArrow}`}

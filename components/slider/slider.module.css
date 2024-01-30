@@ -4,7 +4,26 @@
   flex-direction: column;
   gap: 12px;
 }
-
+.headingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.right {
+  background-color: #f2f2f2;
+  padding: 7px 23px;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+.right i {
+  font-size: 12px;
+}
+.right span {
+  font-weight: bold;
+}
 .toolbox {
   display: flex;
   gap: 24px;
