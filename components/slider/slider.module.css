@@ -1,0 +1,53 @@
+/* global */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolbox {
+  display: flex;
+  gap: 24px;
+  overflow-x: scroll;
+  padding: 12px 0;
+  /* scroll-snap-type: x mandatory;
+  white-space: nowrap;*/
+  scroll-behavior: smooth;
+}
+
+.toolbox::-webkit-scrollbar {
+  display: none;
+}
+.title_btns {
+  display: flex;
+  justify-content: space-between;
+}
+.btns button {
+  color: white;
+  background-color: #373737;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.sliderBody {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sliderBody i {
+  font-size: 40px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+.leftArrow {
+  left: -35px;
+}
+.rightArrow {
+  right: -25px;
+}

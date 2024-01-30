@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Bookmarks from "@/components/bookmarks";
+import Slider from "@/components/slider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,9 @@ export default function Home() {
         <div className={styles.homeBody}>
           <div className={styles.Bookmarks}>
             <Bookmarks />
+          </div>
+          <div className={styles.slider}>
+            <Slider />
           </div>
         </div>
       </main>
