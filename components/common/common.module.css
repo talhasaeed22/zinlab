@@ -1,0 +1,14 @@
+.toolBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.toolBox:hover {
+  box-shadow: 0px 12px 20px 0px rgba(95, 82, 120, 0.09);
+}

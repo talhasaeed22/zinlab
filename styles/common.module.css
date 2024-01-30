@@ -1,0 +1,16 @@
+.primaryHeading {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.secondaryHeading {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+.para {
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(60, 60, 67, 0.6);
+}
