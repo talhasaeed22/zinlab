@@ -125,6 +125,7 @@
   font-size: 15px;
   font-weight: bold;
   color: #6b717e;
+  padding: 0 7px;
 }
 .navItemWrapper {
   position: relative;
@@ -157,4 +158,88 @@
 
 .dropdown span:hover {
   background-color: #ededee;
+}
+
+.Moredropdown {
+  position: absolute;
+  top: 105%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 8px;
+  display: flex;
+  width: max-content;
+  flex-direction: row;
+  gap: 24px;
+  height: 340px;
+}
+.Moredropdown .arrowCont span {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #706d6d;
+  padding: 8px;
+}
+.Moredropdown .arrowCont:hover {
+  background-color: #ededee;
+}
+.arrowCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 6px;
+  cursor: pointer;
+}
+.dropdownLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 6x;
+  border-right: 1px solid lightgray;
+  padding: 12px;
+}
+.dropdownLeft .arrowCont i {
+  font-size: 14px;
+  margin-left: 24px;
+  padding-right: 12px;
+}
+.dropdownRight {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  width: 350px;
+}
+.rightCols {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.rightColsData {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dropdownRightHeading {
+  color: #959597;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+.dropdownRightEndingContainer {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.dropdownRightEndingContainer i {
+  font-size: 14px;
+  color: #000;
+}
+.dropdownRightEnding {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #484848;
 }
