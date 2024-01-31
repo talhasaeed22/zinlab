@@ -8,7 +8,15 @@
   border: 1px solid #ebebeb;
   cursor: pointer;
   transition: all 0.3s;
+  width: 270px;
 }
 .toolBox:hover {
   box-shadow: 0px 12px 20px 0px rgba(95, 82, 120, 0.09);
+}
+
+@media (max-width: 1110px) {
+  .toolBox {
+    width: 100%;
+    white-space: nowrap;
+  }
 }

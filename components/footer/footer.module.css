@@ -60,6 +60,10 @@
   color: #4a4c4da9;
   font-weight: bold;
 }
+.policies {
+  display: flex;
+  gap: 24px;
+}
 .right {
   background-color: #dedfdf;
   width: 50px;
@@ -72,4 +76,57 @@
 .right i {
   color: black;
   font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+  .footerLinks {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .lowerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .policies {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footerContainer {
+    padding: 24px 24px;
+  }
+
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .lowerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .left {
+    gap: 16px;
+    flex-direction: column;
+  }
+  .policies {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .right {
+    width: 40px;
+    height: 40px;
+  }
+  .right i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerLinks {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
 }

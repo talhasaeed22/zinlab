@@ -4,7 +4,7 @@ import styles from "./common.module.css";
 import Image from "next/image";
 const ToolBox = ({ heading, para, image }) => {
   return (
-    <div style={{ width: "300px", height: "189px" }} className={styles.toolBox}>
+    <div className={styles.toolBox}>
       <Image
         src={image}
         width={50}

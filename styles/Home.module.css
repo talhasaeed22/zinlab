@@ -8,3 +8,21 @@
 .slider {
   margin-top: 56px;
 }
+
+@media (max-width: 1600px) {
+  .homeBody {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .homeBody {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .homeBody {
+    padding: 24px;
+  }
+}

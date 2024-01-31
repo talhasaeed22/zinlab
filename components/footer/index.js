@@ -48,13 +48,17 @@ const Footer = () => {
       </div>
       <div className={styles.lowerContainer}>
         <div className={styles.left}>
-          <Image width={150} height={100} src="/vercel.svg" />
-          <span>Privacy Policy</span>
-          <span>Terms and conditionsy</span>
-          <span>Cookies Policy</span>
-          <span>About us</span>
-          <span>EULA</span>
-          <span>Contact</span>
+          <div>
+            <Image width={150} height={100} src="/vercel.svg" />
+          </div>
+          <div className={styles.policies}>
+            <span>Privacy Policy</span>
+            <span>Terms and conditionsy</span>
+            <span>Cookies Policy</span>
+            <span>About us</span>
+            <span>EULA</span>
+            <span>Contact</span>
+          </div>
         </div>
         <div className={styles.right}>
           <i className="fa fa-moon-o" aria-hidden="true"></i>

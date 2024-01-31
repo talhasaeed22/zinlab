@@ -38,6 +38,7 @@
   font-size: 16px;
   font-weight: 400;
 }
+
 .navSearchBar input::placeholder {
   color: #acb3bc;
 }
@@ -78,13 +79,46 @@
 .navbarButton button:nth-child(2):hover {
   background-color: #2a45bd;
 }
-
+@media (max-width: 1250px) {
+  .navSearchBar input {
+    width: 88%;
+  }
+  .navbarLogo {
+    flex: 0.5;
+  }
+  .navbarButton {
+    flex: 0.5;
+  }
+}
 .navbar_lower {
   display: flex;
   justify-content: space-between;
   padding: 12px 64px;
   padding-top: 24px;
   padding-bottom: 0px;
+}
+@media (max-width: 1360px) {
+  .navbar_lower {
+    padding: 12px;
+    padding-top: 24px;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 1170px) {
+  .navbar_container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .navbar_lower {
+    padding: 0px;
+    padding-top: 24px;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 1100px) {
+  .navbar_container {
+    display: none;
+  }
 }
 .navbar_lower span {
   cursor: pointer;
@@ -102,7 +136,7 @@
 }
 .dropdown {
   position: absolute;
-  top: 110%;
+  top: 105%;
   left: 0;
   background-color: #fff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -116,7 +150,11 @@
 .dropdown span {
   cursor: pointer;
   font-size: 15px;
-  font-weight: bold;
-  color: #6b717e;
+  font-weight: 400;
+  color: #706d6d;
   padding: 8px;
+}
+
+.dropdown span:hover {
+  background-color: #ededee;
 }

@@ -14,3 +14,26 @@
   line-height: 18px;
   color: rgba(60, 60, 67, 0.6);
 }
+
+@media (max-width: 700px) {
+  .primaryHeading {
+    font-size: 25px;
+  }
+  .secondaryHeading {
+    font-size: 20px;
+  }
+  .para {
+    font-size: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .primaryHeading {
+    font-size: 20px;
+  }
+  .secondaryHeading {
+    font-size: 16px;
+  }
+  .para {
+    font-size: 10px;
+  }
+}
