@@ -39,16 +39,16 @@ export default function Home() {
       <main>
         <div className={styles.homeBody}>
           <div className={styles.Bookmarks}>
-            <Bookmarks />
+            <Bookmarks heading={"Your Bookmarks"} />
           </div>
           <div className={styles.slider}>
             <Slider />
           </div>
           <div className={styles.Bookmarks}>
-            <Bookmarks />
+            <Bookmarks heading={"Convert from PDF"} />
           </div>
           <div className={styles.Bookmarks}>
-            <Bookmarks />
+            <Bookmarks heading={"Convert to PDF"} />
           </div>
         </div>
       </main>

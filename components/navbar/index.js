@@ -71,12 +71,13 @@ const Navbar = () => {
       "Plug-ins",
       "All Add-ons",
     ],
-    ["asd"],
+    [],
   ];
 
   const [moreItemIndex, setMoreItemIndex] = useState(0);
 
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileDropSelected, setMobileDropSelected] = useState("");
 
   const moreData = [
     {
@@ -115,6 +116,14 @@ const Navbar = () => {
 
   const handleNavitemLeave = () => {
     setActiveDropdown(null);
+  };
+  const handleMobileSelected = (e) => {
+    console.log(e);
+    if (e === mobileDropSelected) {
+      setMobileDropSelected("");
+    } else {
+      setMobileDropSelected(e);
+    }
   };
   return (
     <div className={styles.navbar_container}>
@@ -277,10 +286,35 @@ const Navbar = () => {
               </div>
               {navitems.map((nav, index) => {
                 return (
-                  <div key={index} className={styles.navItemWrapper}>
-                    <span>{nav}</span>
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </div>
+                  <>
+                    <div
+                      onClick={() => {
+                        handleMobileSelected(nav);
+                      }}
+                      key={index}
+                      className={styles.navItemWrapper}
+                    >
+                      <span>{nav}</span>
+                      {mobileDropSelected === nav &&
+                      dropdownContent[index].length > 0 ? (
+                        <i
+                          className="fa fa-chevron-down"
+                          aria-hidden="true"
+                        ></i>
+                      ) : (
+                        <i
+                          className="fa fa-chevron-right"
+                          aria-hidden="true"
+                        ></i>
+                      )}
+                    </div>
+                    {mobileDropSelected === nav &&
+                      dropdownContent[index].map((item, idx) => (
+                        <div key={idx} className={styles.navItemWrapper}>
+                          <span className={styles.dropdownSpan}>{item}</span>
+                        </div>
+                      ))}
+                  </>
                 );
               })}
             </div>
