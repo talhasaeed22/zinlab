@@ -76,6 +76,8 @@ const Navbar = () => {
 
   const [moreItemIndex, setMoreItemIndex] = useState(0);
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const moreData = [
     {
       title: "CMS Templates",
@@ -137,6 +139,12 @@ const Navbar = () => {
         <div className={styles.navbarButton}>
           <button>Log in</button>
           <button>Sign up</button>
+        </div>
+        {/* For Mobile */}
+        <div className={styles.mobileNavbarButton}>
+          <button onClick={() => setMobileOpen(true)}>
+            <i className="fa fa-bars" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
 
@@ -239,6 +247,46 @@ const Navbar = () => {
           );
         })}
       </div>
+      {/* Mobile Navbar */}
+      {mobileOpen && (
+        <div className={styles.mobileNavbarContainer}>
+          <div className={styles.mobileNavbar}>
+            <div className={styles.mobileNavbrHeader}>
+              <div className={styles.mobileNavbarImageContianer}>
+                <Image src="vercel.svg" width={100} height={50} />
+                <i
+                  onClick={() => {
+                    setMobileOpen(false);
+                  }}
+                  className="fa fa-times"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div className={styles.navSearchBar}>
+                <input
+                  placeholder="Search for Movies, TV Shows, Themes & Cast"
+                  type="text"
+                  name="search"
+                  id="search"
+                />
+                <i className="fa fa-search" aria-hidden="true"></i>
+              </div>
+              <div className={styles.navbarButton}>
+                <button>Log in</button>
+                <button>Sign up</button>
+              </div>
+              {navitems.map((nav, index) => {
+                return (
+                  <div key={index} className={styles.navItemWrapper}>
+                    <span>{nav}</span>
+                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
