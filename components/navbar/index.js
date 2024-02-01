@@ -1,112 +1,51 @@
 import styles from "./navbar.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Image from "next/image";
+import {
+  navitem,
+  dropdownContents,
+  moreData,
+  navitems2,
+  doropdownContent2,
+} from "./navitems";
 const Navbar = () => {
-  const navitems = [
-    "Stock Video",
-    "Video Templates",
-    "Music",
-    "Sound Effects",
-    "Graphic Templates",
-    "Graphics",
-    "Presentation Templates",
-    "Photos",
-    "Fonts",
-    "Add-ons",
-    "More",
-  ];
-  const dropdownContent = [
-    ["Stock Footage", "Motion Graphics", "All Stock Video"],
-    [
-      "After Effect",
-      "Premiere Pro",
-      "Apple Motion",
-      "Final Cut Pro",
-      "DaVinci Resolve",
-      "All Video Templates",
-    ],
-    ["Royality Free Music", "logos & Idents", "All Music"],
-    [
-      "Game Sounds",
-      "Tranisition & Movement",
-      "Interface Sounds",
-      "Human Sounds",
-      "Urban Sounds",
-      "Nature Sounds",
-      "Foley Sounds",
-      "Domestic Sounds",
-      "Voice Sounds",
-      "All Sound Effects",
-    ],
-    [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Adobe InDesign",
-      "Sketch",
-      "Adobe XD",
-      "Affinity Designer",
-      "GIMP",
-      "CorelDRAW",
-      "All Graphic Templates",
-    ],
-    [
-      "Backgrounds",
-      "Textures",
-      "Illustrations",
-      "Patterns",
-      "Objects",
-      "Decoration",
-      "Illustrations",
-      "All Graphics",
-    ],
-    ["Keynotes", "Google Slides", "PowerPoint", "All Presentation Templates"],
-    [],
-    ["serif", "sans-serif", "Script & Handwritten", "All Fonts"],
-    [
-      "Actions & Presets",
-      "Brushes",
-      "Layer Styles",
-      "Palettes",
-      "Plug-ins",
-      "All Add-ons",
-    ],
-    [],
-  ];
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [navitems, setNavItems] = useState(navitem);
+  const [dropdownContent, setDropdownContent] = useState(dropdownContents);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setNavItems(
+        window.innerWidth <= 1250 && window.innerWidth > 1100
+          ? navitems2
+          : navitem
+      );
+      setDropdownContent(
+        window.innerWidth <= 1250 && window.innerWidth > 1100
+          ? doropdownContent2
+          : dropdownContents
+      );
+    };
+
+    // Initial window width
+    setWindowWidth(window.innerWidth);
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // const isLess = windowWidth <= 1250;
 
   const [moreItemIndex, setMoreItemIndex] = useState(0);
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropSelected, setMobileDropSelected] = useState("");
-
-  const moreData = [
-    {
-      title: "CMS Templates",
-      sub_items1: [
-        "Dropal",
-        "Joomla",
-        "Magento",
-        "Muse",
-        "OpenCart",
-        "prestaShop",
-      ],
-      sub_items2: ["Shopify", "Unbounce", "Ghost", "Tumblr"],
-      ending: "All CSS Templates",
-    },
-    {
-      title: "WordPress",
-      sub_items1: ["Themes", "Plugins", "Template Kits"],
-      ending: "All WordPress",
-    },
-    {
-      title: "3D",
-      ending: "All 3D",
-    },
-    {
-      title: "Free Files",
-      ending: "Monthly Free Files",
-    },
-  ];
 
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -134,6 +73,7 @@ const Navbar = () => {
             width={80}
             height={50}
             src="vercel.svg"
+            alt="logo"
           />
         </div>
         <div className={styles.navSearchBar}>
@@ -247,7 +187,10 @@ const Navbar = () => {
                       <p className={styles.dropdownRightEnding}>
                         {moreData[moreItemIndex].ending}
                       </p>
-                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                      <i
+                        className="fa fa-long-arrow-right"
+                        aria-hidden="true"
+                      ></i>
                     </div>
                   </div>
                 </div>
@@ -262,7 +205,7 @@ const Navbar = () => {
           <div className={styles.mobileNavbar}>
             <div className={styles.mobileNavbrHeader}>
               <div className={styles.mobileNavbarImageContianer}>
-                <Image src="vercel.svg" width={100} height={50} />
+                <Image src="vercel.svg" width={100} height={50} alt="logo" />
                 <i
                   onClick={() => {
                     setMobileOpen(false);
